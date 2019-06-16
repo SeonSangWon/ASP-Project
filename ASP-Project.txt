@@ -1,0 +1,57 @@
+-프로젝트 개요 :
+ JSP로 만들었던 개인 웹 페이지 - 게스트하우스 프로젝트를 ASP로 재설계하는 프로젝트
+
+-설계 내용 :
+ MasterPage를 통해 개발을 진행하였으며, 한 프레임 안에서 모든 페이지가 이동 될 수 있도록
+구현하기 위해서 MultiView 와 View를 사용하여 구현하였다.
+사이트의 큰 흐름으로서 메인 홈페이지 와 소개 홈페이지로 나뉜다고 볼 수 있다.
+메인 홈페이지 내에서는 주요 기능인 예약하기(회원가입) / 예약확인(로그인) / 게시판 을 이용가능하며,
+소개 페이지에서는 웹 페이지의 소개 내용이 담겨있다.
+
+-JSP 프로젝트를 ASP로 재설계하면서 힘들었던 점 :
+ 맨 처음 include의 사용법을 몰라 헤매던 중, <!-- --> 태그 안에 include를 사용하면 된다는 정보를
+통해 시도해보았으나 서버 컨트롤의 충돌로 인해 방법을 연구하던중 MasterPage를 통해 개발을
+할 수 있다는 정보에 MasterPage로 개발을 진행하기로 했다. 
+또한 여러 페이지의 이동이 있는 웹사이트가 아니다보니 다소 코드가 복잡하게 된 단점이 있다.
+
+-ASP 프로젝트를 통해 알게된 점 :
+ 확실히 다른 스크립트 언어에 비해 ASP언어가 편리하다는 것을 알게되었으며 .NET을 통해
+더욱 더 발전된 ASP언어를 체감할 수 있었다. 
+ 가장 좋았던 점을 뽑자면 여러 개가 있지만 그중에서도 DataBase를 통해 진행되는 과정이 매우 편리했다.
+매번 힘들게 복사 + 붙여넣기를 하던 소스를 한 개의 클래스로 정리하여 객체를 생성 후,
+상황에 맞는 메소드를 선언해주면 그만이였기때문에 확실히 해당 언어의 
+매력을 느낄 수 있는 좋은 기회가 되었다.
+추후 기회가 된다면 또다른 개인 프로젝트를 진행하므로써 해당 프로젝트에서 사용하지 못한
+다른 컨트롤들의 사용을 통해 실력을 향상 시킬 예정이다.
+
+MSSQL
+-DataBase : SQLEXPRESS_ASP
+-Database Name : house
+-Table Name : member(회원), board(게시판)
+
+-member Structor
+phone varchar(11) Not Null    //전화번호를 Primary Key로 사용하므로써 회원구분
+name varchar(30) Not Null	 //예약자 이름
+time varchar(10) Not Null	 //게스트하우스 도착 예정 시간
+email varchar(30) Not Null	 //게스트하우스 각종 이벤트를 수신받을 E-Mail
+emailcheck varchar(5)	 //E-Mail수신 동의 여부
+room varchar(30) Not Null	 //객실명
+day varchar(2) Not Null	 //숙박 일 수
+price varchar(10) Not Null	 //입금 금액
+checkin varchar(20) Not Null  //체크인 날짜
+checkout varchar(20) Not Null//체크아웃 날짜
+bank varchar(30) Not Null	 //입금 은행과 계좌명
+reg_date varchar(10) Not Null //결제한 날짜
+Primary Key(phone)
+);
+
+-board Structor
+uid int Not Null Auto_Increment,//게시글 번호(PK)
+name varchar(30),		     //작성자 이름
+password varchar(4),	     //비밀번호 (숫자 4자리로 진행)
+subject varchar(50),		     //게시글 제목
+comment text,	  	     //게시글 내용
+reg_date varchar(10),	     //작성 날짜	
+ref int,			     //조회 수
+Primary Key(uid)
+);
