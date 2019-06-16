@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html>
+
+<script runat="server">
+
+    protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect(string.Format("menu.aspx?target=" + "dinner"));
+    }
+
+</script>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="css/main_body.css" rel="stylesheet" type="text/css" />
+    <link href="css/font.css" rel="stylesheet" type="text/css" />
+    <link href="css/reserve.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div align="center" onclick="location.href='main.aspx'">
+            <asp:Image ID="Image1" runat="server" Width="300" ImageUrl="~/imgs/top_1.jpg" />
+            <asp:Image ID="Image2" runat="server" Width="600" ImageUrl="~/imgs/top_2.jpg" />
+        </div>
+
+        <!-- middleTop 메뉴바 -->
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
+        <div style="padding-left: 50px">
+        <asp:Table ID="table1" runat="server" Width="100%">
+            <asp:TableRow>
+                <asp:TableCell Width="80%" BackColor="White">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder4" runat="server" />
+                </asp:TableCell>
+                <asp:TableCell VerticalAlign="Top">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server" />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell ColumnSpan="2" VerticalAlign="Middle">
+                    <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/imgs/flower.jpg" 
+                        OnClick="ImageButton1_Click" />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell ColumnSpan="2">
+                    <div class="sans-serif">
+                        <asp:ContentPlaceHolder id="ContentPlaceHolder3" runat="server" />
+                    </div>
+                </asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
