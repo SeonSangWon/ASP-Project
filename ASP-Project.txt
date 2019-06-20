@@ -46,7 +46,7 @@ Primary Key(phone)
 );
 
 -board Structor
-uid int Not Null Auto_Increment,//게시글 번호(PK)
+uid int IDENTITY(1,1) Not Null,//게시글 번호(PK)
 name varchar(30),		             //작성자 이름
 password varchar(4),	           //비밀번호 (숫자 4자리로 진행)
 subject varchar(50),            //게시글 제목
