@@ -1,0 +1,13 @@
+﻿body {
+}
+button {
+    padding: 5px 15px;
+    background: #ccc;
+    border: 0 none;
+    color: #006fff;
+    cursor: pointer;
+    width: 110px;
+    height: 40px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}

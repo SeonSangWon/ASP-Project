@@ -1,0 +1,62 @@
+﻿input[type=text] {
+    padding: 5px;
+    border: 2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=text]:focus {
+        border-color: #333;
+}
+
+input[type=submit] {
+    padding: 5px 15px;
+    background: #ccc;
+    border: 0 none;
+    color: #006fff;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=button] {
+    padding: 5px 15px;
+    background: #ccc;
+    border: 0 none;
+    color: #006fff;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+select {
+    width: 200px;
+    height: 20px;
+    padding-left: 10px;
+    font-size: 13px;
+    color: #006fff;
+    border: 1px solid #006fff;
+    border-radius: 3px;
+}
+
+.serif {
+    font-family: serif;
+}
+
+.sans-serif {
+    font-family: sans-serif;
+}
+
+.cursive {
+    font-family: cursive;
+}
+
+.fantasy {
+    font-family: fantasy;
+}
+
+.monospace {
+    font-family: monospace;
+}
