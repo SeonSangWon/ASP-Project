@@ -55,3 +55,5 @@ reg_date varchar(10),	          //작성 날짜
 ref int,			                     //조회 수
 Primary Key(uid)
 );
+
+
