@@ -56,4 +56,3 @@ ref int,			                     //조회 수
 Primary Key(uid)
 );
 
-
